@@ -1,0 +1,118 @@
+/* App Component - Responsive Layout System */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background);
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+}
+
+.app__container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+/* Mobile-first responsive breakpoints */
+
+/* Extra small devices (phones, 320px and up) */
+@media (min-width: 320px) {
+  .app__main {
+    padding: var(--spacing-sm);
+  }
+  
+  .app__content {
+    gap: var(--spacing-md);
+  }
+}
+
+/* Small devices (large phones, 480px and up) */
+@media (min-width: 480px) {
+  .app__main {
+    padding: var(--spacing-md);
+  }
+  
+  .app__content {
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .app__main {
+    padding: var(--spacing-lg);
+  }
+  
+  .app__container {
+    max-width: 900px;
+  }
+  
+  .app__content {
+    gap: var(--spacing-xl);
+  }
+}
+
+/* Large devices (desktops, 1024px and up) */
+@media (min-width: 1024px) {
+  .app__main {
+    padding: var(--spacing-xl);
+  }
+  
+  .app__container {
+    max-width: 1000px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .app__container {
+    max-width: 1200px;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .app__main {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .app__content {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .app {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Print styles */
+@media print {
+  .app__main {
+    padding: 0;
+  }
+  
+  .app__container {
+    max-width: none;
+  }
+}
